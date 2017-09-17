@@ -1,0 +1,91 @@
+html {
+  font-family: 'Rubik', sans-serif;
+  box-sizing: border-box;
+}
+
+body{
+    background: url(../images/Wiki-background.jpg);
+    height: auto;
+    min-height: 100vh;
+    width: 100vw;
+    margin: 0 auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    max-width: 100%;
+}
+
+
+*, *:before, *:after {
+  box-sizing: inherit;
+}
+
+.container {
+  max-width: 640px;
+  margin: 0 auto;
+}
+
+.title {
+  width: 100%;
+  text-align: center;
+}
+
+.card {
+  cursor: pointer;
+  perspective: 1000px;
+}
+
+.card img {
+  width: 100%;
+}
+
+.buffer {
+  padding: 5px;
+  float: left;
+  padding: 5px;
+}
+
+.card.active .flipper {
+  transform: rotateY(180deg);
+}
+
+.card, .front, .back {
+  width: 150px;
+  height: 150px;
+  border-radius: 3px;
+  overflow: hidden;
+}
+
+.flipper {
+  transition: 0.2s;
+  transform-style: preserve-3d;
+  position: relative;
+}
+
+.front, .back {
+  text-align: center;
+  backface-visibility: hidden;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+.front {
+  z-index: 2;
+  transform: rotateY(0deg);
+  background:url(../images/XTCAnEdM.jpg)no-repeat center;
+    background-size: contain;
+  position: relative;
+}
+
+.front span {
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  position: absolute;
+}
+
+.back {
+  transform: rotateY(180deg);
+    border: solid 3px #ffffff;
+}
